@@ -45,6 +45,14 @@
                    ::concept-set-name
                    ::concept-set-items]))
 
+;; numeric range
+(s/def ::numeric-value float?)
+(s/def ::numeric-operation #{"<" "<=" "=" ">=" ">"}) 
+(s/def ::numeric-range
+  (s/keys :req-un [::numeric-value 
+                   ::numeric-operation]))
+
+
 
 ;; condition occurrence
 (s/def ::codeset-id int?)
@@ -55,15 +63,20 @@
 (s/def ::condition-type-exclude? boolean?)
 (s/def ::stop-reason string?)
 (s/def ::condition-source-concept int?)
-(s/def ::age )
-(s/def ::gender )
-(s/def ::gender-cs )
-(s/def ::provider-specialty )
-(s/def ::provider-specialty-cs )
-(s/def ::visit-type )
-(s/def ::visit-type-cs )
-(s/def ::condition-status )
-(s/def ::condition-status-cs )
+(s/def ::age ::numeric-range)
+(s/def ::gender ::concept)
+(s/def ::provider-specialty ::concept)
+(s/def ::visit-type ::concept)
+(s/def ::condition-status ::concept)
+(s/def ::condition-occurrence
+  (s/keys :req-un [::codeset-id ::first? ::occurrence-start-date
+                   ::occurrence-end-date ::condition-type
+                   ::condition-type-exclude? ::stop-reason
+                   ::condition-source-concept ::age
+                   ::gender ::provider-specialty ::visit-type
+                   ::condition-status]))
+                   
+  
 
 
 
