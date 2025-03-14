@@ -1,0 +1,8 @@
+#+TITLE: Moirai, a functional Hades experiment in Clojure 
+#+AUTHOR: Bill O'Brien
+
+Personal project, not aligned with my .gov work 
+
+Keeping with the Greek naming convention of ohdsi.org...
+
+Hades -> Functional Hades -> Fates -> Moirai 
