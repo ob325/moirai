@@ -13,6 +13,7 @@
 (jdbc/execute! ds ["select * from concept limit 10"])
 
 
+(jdbc/execute! ds ["select * from concept where concept_name like ?" "%heart%"])
 
 
 
